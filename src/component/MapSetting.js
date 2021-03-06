@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Modal, Pressable } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import RadioButton from "./RadioButton";
 import Segmented from "./Segmented";
+import PolylineColor from "./PolylineColor";
 
 const mapType = [
   { mapType: "standard" },
@@ -18,6 +19,7 @@ const MapSetting = ({
   setModalVisible,
   setMapType,
   setCustomMapStyle,
+  setStrokeColor,
 }) => {
   return (
     <Modal
@@ -42,6 +44,7 @@ const MapSetting = ({
           </Pressable>
           <Segmented setMapType={setMapType} mapType={mapType} />
           <RadioButton setCustomMapStyle={setCustomMapStyle} />
+          <PolylineColor setStrokeColor={setStrokeColor} />
         </View>
       </View>
     </Modal>

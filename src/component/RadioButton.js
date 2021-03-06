@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Night } from "../custom/Night";
 import { Retro } from "../custom/Retro";
 import { Aubergine } from "../custom/Aubergine";
+import { Dark } from "../custom/Dark";
+import { Silver } from "../custom/Silver";
 
 const RadioButton = ({ setCustomMapStyle }) => {
   const [radioSelected, setRadio] = React.useState(1);
@@ -21,6 +23,16 @@ const RadioButton = ({ setCustomMapStyle }) => {
       id: 3,
       name: "Aubergine",
       custom: Aubergine,
+    },
+    {
+      id: 4,
+      name: "Dark",
+      custom: Dark,
+    },
+    {
+      id: 5,
+      name: "Silver",
+      custom: Silver,
     },
   ];
   return products.map((val) => {

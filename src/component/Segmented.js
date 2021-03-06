@@ -14,6 +14,7 @@ const Segmented = ({ setMapType, mapType }) => {
       {mapType.map((item) => {
         return (
           <TouchableOpacity
+            key={item.mapType}
             onPress={() => {
               setMapType(item.mapType);
             }}

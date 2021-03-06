@@ -2,15 +2,10 @@ import React, { useState } from "react";
 import MapView, { Polyline } from "react-native-maps";
 import {
   StyleSheet,
-  Text,
   View,
   Dimensions,
-  Modal,
-  Pressable,
 } from "react-native";
-import { Night } from "./custom/Night";
 import { Retro } from "./custom/Retro";
-import { Aubergine } from "./custom/Aubergine";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 import MapSetting from "./component/MapSetting";
@@ -18,6 +13,7 @@ export default function Map() {
   const [modalVisible, setModalVisible] = useState(false);
   const [mapType, setMapType] = useState("standard");
   const [customMapStyle, setCustomMapStyle] = useState(Retro);
+  const [strokeColor, setStrokeColor] = useState("#000");
   return (
     <View style={styles.container}>
       <MapSetting
@@ -25,6 +21,7 @@ export default function Map() {
         setModalVisible={setModalVisible}
         setMapType={setMapType}
         setCustomMapStyle={setCustomMapStyle}
+        setStrokeColor={setStrokeColor}
       />
       <MapView
         showsMyLocationButton
@@ -49,7 +46,7 @@ export default function Map() {
             { latitude: 37.7948605, longitude: -122.4596065 },
             { latitude: 37.8025259, longitude: -122.4351431 },
           ]}
-          strokeColor="#000" // fallback for when `strokeColors` is not supported by the map-provider
+          strokeColor={strokeColor} // fallback for when `strokeColors` is not supported by the map-provider
           strokeWidth={6}
         />
       </MapView>
